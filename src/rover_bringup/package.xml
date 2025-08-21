@@ -10,6 +10,17 @@
   <depend>launch</depend>
   <depend>launch_ros</depend>
 
+  <!-- using exec_depend because I'm only running executables for the packages -->
+  <exec_depend>ugv_bringup</exec_depend>
+  <exec_depend>ugv_description</exec_depend>
+  <exec_depend>ugv_base_node</exec_depend>
+
+  <exec_depend>robot_localization</exec_depend>
+  <exec_depend>imu_complementary_filter</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  
+  
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
   <test_depend>ament_pep257</test_depend>
