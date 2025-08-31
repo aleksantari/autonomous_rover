@@ -22,10 +22,12 @@ def generate_launch_description():
 
     # ---- Paths ----
     ugv_desc_share = FindPackageShare('ugv_description')
-    model_path = PathJoinSubstitution([ugv_desc_share, 'urdf', urdf_file])
+    model_path = PathJoinSubstitution([ugv_desc_share, 'urdf', LaunchConfiguration('urdf_file')])
 
     # Build robot_description using xacro (works for .urdf.xacro; also passes through .urdf)
-    robot_description = {'robot_description': ParameterValue(Command(['xacro', model_path]), value_type=str)}
+    robot_description = {
+    'robot_description': ParameterValue(Command(['xacro ', model_path]), value_type=str)
+    }
 
     # ---- Nodes ----
 
@@ -68,8 +70,11 @@ def generate_launch_description():
 
     # 6) Robot State Publisher (direct; no Waveshare display.launch.py; no SLAM refs)
     rsp = Node(
-        package='robot_state_publisher', executable='robot_state_publisher', name='robot_state_publisher',
-        parameters=[robot_description], output='screen'
+    package='robot_state_publisher',
+    executable='robot_state_publisher',
+    name='robot_state_publisher',
+    parameters=[robot_description],
+    output='screen'
     )
 
     # 7) (Optional) RViz from YOUR package (provide your own RViz config later if you want)
