@@ -3,8 +3,15 @@ import os
 from glob import glob
 
 package_name = 'rover_bringup'
-launch_files = glob(os.path.join('rover_bringup','launch', '*.launch.py'))
-config_files = glob(os.path.join('rover_bringup','config', '*.yaml'))
+# Search for launch files placed directly in the package's ``launch`` directory
+# rather than under an additional ``rover_bringup`` subdirectory.  This aligns
+# the installation paths with the typical ROS 2 layout where launch files are
+# located at the top level of the package.
+launch_files = glob(os.path.join('launch', '*.launch.py'))
+
+# Similarly, gather any configuration files stored directly in a top-level
+# ``config`` directory.
+config_files = glob(os.path.join('config', '*.yaml'))
 
 setup(
     name=package_name,
