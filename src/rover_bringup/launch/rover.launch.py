@@ -37,19 +37,13 @@ def generate_launch_description():
     # 1) Serial bringup (publishes /imu/data_raw, /odom/odom_raw; subscribes /cmd_vel)
     bringup_node = Node(
         package='ugv_bringup', executable='ugv_bringup', name='ugv_bringup', output='screen'
-        parameters=[{
-        'port': '/dev/ttyTHS1',   # or 'device' / 'serial_port'
-        'baud': 115200            # or 'baudrate': 921600, etc.
-        }]
+
     )
 
     # 2) Driver (sends /cmd_vel to MCU)
     driver_node = Node(
         package='ugv_bringup', executable='ugv_driver', name='ugv_driver', output='screen'
-        parameters=[{
-        'port': '/dev/ttyTHS1',
-        'baud': 115200
-        }]
+        
     )
 
     # 3) IMU filter (choose one: complementary by default; switch to madgwick with your own arg if desired)
