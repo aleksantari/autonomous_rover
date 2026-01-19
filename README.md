@@ -4,6 +4,9 @@ Open source ROS 2 stack for the JHU Embodied AI Club focused on an autonomous ro
 This repository is the foundation for a **behavior-tree-based autonomy stack** that builds
 from low-level rover bringup to higher-level navigation and decision-making.
 
+![Image](https://github.com/user-attachments/assets/17efa26b-67da-4155-ac95-bbbc55936c0e)
+
+
 ---
 
 ## Project Status (Current State)
@@ -73,17 +76,17 @@ ros2 launch rover_nav nav.launch.py
 
 ---
 
-## Media (Add Later)
+## Video demo
 
-> **Image placeholder** — insert a rover photo or architecture diagram here.
+> testing commands via ros2_control.
 
-> **Video placeholder** — insert a demo or simulation clip here.
+<video src="https://github.com/user-attachments/assets/98c3db93-e9a5-4a27-add2-950f71cae3e0" width="600" controls></video>
 
 ---
 
 ## Contributing
 
-If you're a contributor or recruiter reviewing this repository:
+If you're a contributor reviewing this repository:
 
 - This is a **foundation repo** with a clear growth path toward full autonomy.
 - We are actively building toward a modular behavior-tree architecture.
