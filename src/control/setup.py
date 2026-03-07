@@ -25,6 +25,7 @@ setup(
     entry_points={
         'console_scripts': [
             "keyboard_ctrl = control.keyboard:main",
+            "cam = control.cam:main"
         ],
     },
 )
